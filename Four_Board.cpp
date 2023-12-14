@@ -88,7 +88,6 @@ void Four_Board::display_board() {
 
 // Returns true if there is any winner
 // either X or O
-// Written in a complex way. DO NOT DO LIKE THIS.
 
 bool Four_Board::is_winner() {
     for(int i : {0,1,2,3,4,5}){
@@ -101,7 +100,7 @@ bool Four_Board::is_winner() {
     return false;
 }
 
-// Return true if 9 moves are done and no winner
+// Return true if 42 moves are done and no winner
 bool Four_Board::is_draw() {
     return (n_moves == 42 && !is_winner());
 }

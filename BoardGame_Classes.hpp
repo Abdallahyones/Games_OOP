@@ -6,6 +6,7 @@
 #define _BoardGame_CLASSES_H
 using namespace std;
 
+#include <iostream>
 class Board {
 protected:
    int n_rows, n_cols;
