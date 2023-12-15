@@ -74,9 +74,10 @@ class Player {
 class RandomPlayer: public Player {
     protected:
         int dimension;
+        int dimension2;
     public:
         // Take a symbol and pass it to parent
-        RandomPlayer (char symbol, int dimension);
+        RandomPlayer (char symbol, int dimension, int dimension2);
         // Generate a random move
         void get_move(int& x, int& y);
 };
