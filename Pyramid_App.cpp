@@ -18,7 +18,7 @@ int main(){
     }
     else{
         //Player pointer points to child
-        players[1] = new RandomPlayer ('O', 3);
+        players[1] = new RandomPlayer ('O', 5);
     }
     GameManager pyramid_game (new Pyramid_Board(), players);
     pyramid_game.run();

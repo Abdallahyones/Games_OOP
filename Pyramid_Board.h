@@ -20,5 +20,5 @@ public:
     bool is_winner();
     bool is_draw();
     bool game_is_over();
-    
+    void toBoardDimentions(int &x, int &y);
 };

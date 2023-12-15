@@ -58,15 +58,23 @@ bool Pyramid_Board::is_winner(){
 
 //Check for Draw and Game is Over
 bool Pyramid_Board::is_draw() {
-    return (n_moves == n_rows * n_cols && !is_winner());
+    return (n_moves == 9 && !is_winner());
 }
 bool Pyramid_Board::game_is_over () {
-    return n_moves >= n_rows * n_cols;
+    return n_moves >= 9;
+}
+
+//Convert Row Column Input to Board
+void Pyramid_Board::toBoardDimentions(int &x, int &y){
+    int row_size = x * 2 + 1;
+    int maxnum = (n_cols - row_size) / 2;
+    y -= maxnum;
 }
 
 //Update Board
 bool Pyramid_Board::update_board(int x, int y, char mark){
     // Only update if move is valid
+    toBoardDimentions(x,y);
     if (isValid(x, y) && (board[x][y] == '#')) {
         board[x][y] = toupper(mark);
         n_moves++;
