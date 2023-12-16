@@ -1,3 +1,5 @@
 
 .vscode
 Pyramid_App.exe
+build
+CmakeLists.txt
