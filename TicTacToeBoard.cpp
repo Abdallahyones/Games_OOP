@@ -24,8 +24,9 @@ bool TicTacToeBoard::isValid(int &x, int &y){
 int player1 = true;
 int play = 0;
 bool TicTacToeBoard::is_winner(){
-    if (!game_is_over()) {return false;}
-
+    if (!game_is_over()) {
+        return false;
+    }
     if (play == 1 && player1){
         return true;
     }
@@ -36,14 +37,16 @@ bool TicTacToeBoard::is_winner(){
     return false;
 }
 
+
 int TicTacToeBoard::CalcPoints(){
     int x_points = 0, o_points = 0;
 
     //Set Last Char
     for (int i = 0; i < n_rows; ++i) {
         for (int j = 0; j < n_cols; ++j) {
-            if (board[i][j] == '#')
-            board[i][j] = 'X';
+            if (board[i][j] == '#'){
+                board[i][j] = 'X';
+            }
         }
     }
 
@@ -97,18 +100,16 @@ bool TicTacToeBoard::is_draw(){
     return true;
 }
 
-
 // Game Over Check
 bool TicTacToeBoard::game_is_over(){
-    if (n_moves == 24)
-    {
+    if (n_moves == 24){
         play = CalcPoints();
         return true;
     }
     return false;
-    ;
 }
 
+// Displaying board
 void TicTacToeBoard::display_board(){
     cout << endl;
     for(int i = 0; i < n_rows; i++){
