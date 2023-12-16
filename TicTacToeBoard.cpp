@@ -113,10 +113,10 @@ void TicTacToeBoard::display_board(){
     cout << endl;
     for(int i = 0; i < n_rows; i++){
         for(int j = 0; j < n_cols; j++){
-            cout << board[i][j] << ' ';
+            cout << board[i][j] << " | ";
         }
         cout << endl;
-        cout << "---------" << endl;
+        cout << "-------------------" << endl;
     }
-    cout << endl;
+//    cout << endl;
 }
