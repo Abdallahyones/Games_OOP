@@ -1,3 +1,10 @@
+// Author: Abdullah Mohamed Abdullah Mohamed   // ID: 20220204
+// Author: Eyad Ahmed Taimour                  // ID: 20220073
+// Author: Seif Hossam Eldein Ali Said         // ID: 20220524
+// Section: S21/22
+// TA: Eng. Rana Abdelkader
+// Date: 17 Dec 2023
+
 #include "Connect_Four.h"
 #include "Pyramid.h"
 #include "TicTacToe.h"
