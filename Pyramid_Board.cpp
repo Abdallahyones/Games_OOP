@@ -15,7 +15,7 @@ Pyramid_Board::Pyramid_Board() {
 
 //Check if Valid Move
 bool Pyramid_Board::isValid(int &x, int &y){
-    if (y < 0){
+    if (y < 0 || x < 0){
         return false;
     }
 
