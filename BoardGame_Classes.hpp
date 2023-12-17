@@ -30,6 +30,19 @@ public:
    virtual bool game_is_over() = 0;
 };
 
+///////////////////////////////////////////
+// This class represents a 3 x 3 board
+// used in X_O game
+class X_O_Board:public Board {
+public:
+    X_O_Board ();
+    bool update_board (int x, int y, char mark);
+    void display_board();
+    bool is_winner();
+    bool is_draw();
+    bool game_is_over();
+};
+
 
 ///////////////////////////////////////////
 // This class represents a player who has
