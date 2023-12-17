@@ -1,5 +1,5 @@
 
 .vscode
-Pyramid_App.exe
+*.exe
 build
 CmakeLists.txt

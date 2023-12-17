@@ -31,7 +31,7 @@ int main() {
     }
     else{
         //Player pointer points to child
-        players[1] = new RandomPlayer ('O', 7);
+        players[1] = new RandomPlayer ('O', 7, 6);
     }
     GameManager four_game (new Four_Board(), players);
     four_game.run();
