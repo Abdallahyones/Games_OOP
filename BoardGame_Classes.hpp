@@ -10,15 +10,16 @@ using namespace std;
 class Board {
 protected:
    int n_rows, n_cols;
-   char** board;
    int  n_moves = 0;
-
 public:
-   // Return true  if move is valid and put it on board
+
+    char** board;
+
+    // Return true  if move is valid and put it on board
    // within board boundaries in empty cell
    // Return false otherwise
    virtual bool update_board (int x, int y, char symbol) = 0;
-   // Returns true if there is any winner
+    // Returns true if there is any winner
    // either X or O
    // Written in a complex way. DO NOT DO LIKE THIS.
    virtual bool is_winner() = 0;
@@ -85,11 +86,11 @@ class RandomPlayer: public Player {
 
 ///////////////////////////////////////////
 class GameManager {
-    private:
+    public:
         Board* boardPtr;
         Player* players[2];
     public:
-        GameManager(Board*, Player* playerPtr[2]);
+        GameManager(Board*&, Player* playerPtr[2]);
         void run();
         // This method creates board and players
         // It displays board

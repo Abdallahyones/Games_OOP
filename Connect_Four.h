@@ -33,4 +33,24 @@ public:
     void get_move(int &x, int &y);
 };
 
+class Four_AI_Player : public Player {
+public:
+    Board* board;
+    Four_AI_Player(char symbol , Board*& bPtr);
+
+    int TheBestMove();
+    int MinMax(char**& board, int depth, int alpha, int beta, bool maximizingPlayer);
+    int evaluateBoard( char player);
+    bool isWinner(char**board, char player) ;
+
+    // Generate a random move
+    void get_move(int& x, int& y);
+    void get_x(int &x , int& y);
+};
+
+
 #endif //ASSIGNMENT3_CONNECT_FOUR_H
+
+
+
+
