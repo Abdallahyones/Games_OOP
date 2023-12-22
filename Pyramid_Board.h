@@ -21,4 +21,5 @@ public:
     bool is_draw();
     bool game_is_over();
     void toBoardDimentions(int &x, int &y);
+    vector <pair<int,int>> availableSpaces();
 };

@@ -7,13 +7,15 @@
 using namespace std;
 
 #include <iostream>
+#include <vector>
 class Board {
 protected:
    int n_rows, n_cols;
-   char** board;
+   
    int  n_moves = 0;
 
 public:
+    char** board;
    // Return true  if move is valid and put it on board
    // within board boundaries in empty cell
    // Return false otherwise
@@ -28,6 +30,8 @@ public:
    virtual void display_board() = 0;
    // Return true if game is over
    virtual bool game_is_over() = 0;
+   virtual bool isValid(int &x, int &y) = 0;
+   virtual vector<pair<int,int>> availableSpaces() = 0;
 };
 
 
