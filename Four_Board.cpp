@@ -34,13 +34,7 @@ bool Four_Board ::diagonally(int x, int y) {
     for (int i = 0 ; i < 4 ; i++){
         if (isvalid(x+i , y+i)) w += board[x+i][y+i];
     }
-    if (s == w){
-        return true;
-    }
-    w = "";
-    for (int i = 0 ; i < 4 ; i++){
-        if (isvalid(x-i , y+i)) w += board[x-i][y+i];
-    }
+
     return (s == w) ;
 }
 

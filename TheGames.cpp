@@ -1,3 +1,10 @@
+// Author: Abdullah Mohamed Abdullah Mohamed   // ID: 20220204
+// Author: Eyad Ahmed Taimour                  // ID: 20220073
+// Author: Seif Hossam Eldein Ali Said         // ID: 20220524
+// Section: S21/22
+// TA: Eng. Rana Abdelkader
+// Date: 17 Dec 2023
+
 #include "Connect_Four.h"
 #include "Pyramid.h"
 #include "TicTacToe.h"
@@ -45,13 +52,12 @@ int main() {
         case 2:
             players[0] = new Four_Player (1, 'X');
             board = new Four_Board   ;
-            cout << "Press 1 if you want to play with computer or press 2 if you want to play with AI_player  ";
+            cout << "Press 1 if you want to play with computer: ";
             cin >> choice;
-            if (choice != 1 && choice != 2){
+            if (choice != 1){
                 players[1] = new Four_Player (2, 'O');
-            }else if (choice == 2){
-                players[1] = new Four_AI_Player('O', board);
-            }else{
+            }
+            else{
                 //Player pointer points to child
                 players[1] = new RandomPlayer ('O', 7, 6);
             }
