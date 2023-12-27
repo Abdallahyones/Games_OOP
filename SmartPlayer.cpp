@@ -10,27 +10,23 @@ TicTacToe_AI_Player::TicTacToe_AI_Player(char symbol, Board *bPtr) : Player(symb
 
 void TicTacToe_AI_Player::get_move(int &x, int &y) {
     y = BestMove();
-    get_x(x, y);
+    x = BestMove();
 }
 
 void TicTacToe_AI_Player::get_x(int &x, int &y) {
-    while (~x && y < 5 && this->board->board[x][y] != '#') {
-        x--;
-    }
+    //NOT NEEDED
 }
 
 int TicTacToe_AI_Player::BestMove() {
     char **b = this->board->board;
     int bestMove = -1, bestVal = INT_MIN, val;
     for (int y = 0; y < 5; y++) {
-        int x = 4;
-        get_x(x, y);
-        if (~x && x < 5) {
-            b[x][y] = this->symbol;
+        for (int x = 0; x < 5; x++) {
             val = MinMax(this->board->board, 4, INT_MIN, INT_MAX, false);
             b[x][y] = '#';
             if (bestVal < val)
                 bestVal = val, bestMove = y;
+            b[x][y] = this->symbol;
         }
     }
     return bestMove;
@@ -43,9 +39,7 @@ int TicTacToe_AI_Player::MinMax(char **&board, int depth, int alpha, int beta, b
     if (who) {
         int maxEval = INT_MIN;
         for (int y = 0; y < 5; ++y) {
-            int x = 4;
-            get_x(x, y);
-            if (~x) {
+            for (int x = 0; x < 5; x++) {
                 board[x][y] = symbol;
                 int eval = MinMax(board, depth - 1, alpha, beta, false);
                 maxEval = max(maxEval, eval);
@@ -59,9 +53,7 @@ int TicTacToe_AI_Player::MinMax(char **&board, int depth, int alpha, int beta, b
     } else {
         int minEval = INT_MAX;
         for (int y = 0; y < 5; ++y) {
-            int x = 4;
-            get_x(x, y);
-            if (~x) {
+            for (int x = 0; x < 5; x++) {
                 board[x][y] = 'X';
                 int eval = MinMax(board, depth - 1, alpha, beta, true);
                 minEval = min(minEval, eval);
