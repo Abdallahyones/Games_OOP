@@ -14,6 +14,17 @@ public:
     int CalcPoints();
 };
 
-
+class TicTacToe_AI_Player : public Player {
+public:
+    Board* board;
+    TicTacToe_AI_Player(char symbol , Board* PB);
+    int MinMax(char**& board, int depth, int alpha, int beta, bool maximizingPlayer);
+    int evalBoard(char player);
+    bool isWinner(char** board, char player);
+    int BestMove();
+    // Random Moves.
+    void get_move(int& x, int& y);
+    void get_x(int &x , int& y);
+};
 
 #endif //X_0_TICTACTOEBOARD_H

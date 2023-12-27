@@ -29,7 +29,7 @@ Player::Player (int order, char symbol) {
 // Virtual (can change for other player types)
 
 void Player::get_move (int& x, int& y) {
-    cout << "\nPlease enter your move x and y (0 to 2) separated by spaces: ";
+    cout << "\nPlease enter your move x and y (0 to 4) separated by spaces: ";
     cin >> x >> y;
 }
 

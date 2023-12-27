@@ -10,10 +10,10 @@ using namespace std;
 class Board {
 protected:
    int n_rows, n_cols;
-   char** board;
    int  n_moves = 0;
 
 public:
+    char** board;
    // Return true  if move is valid and put it on board
    // within board boundaries in empty cell
    // Return false otherwise
