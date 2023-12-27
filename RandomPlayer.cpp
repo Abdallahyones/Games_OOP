@@ -1,17 +1,4 @@
-// Class definition for XO_RandomPlayer class
-// Which is a computer player playing randomly
-// Author:  Mohammad El-Ramly
-// Date:    10/10/2022
-// Version: 1
-#include<iostream>
-#include<random>
-#include<iomanip>
-#include<algorithm>
-#include"BoardGame_Classes.hpp"
-
-using namespace std;
-
-// Set player symbol and name as Random Computer Player
+#include "randomplayer.h"
 
 RandomPlayer::RandomPlayer (char symbol, int dimension, int dimension2 = 0):Player(symbol)
 {
@@ -21,11 +8,10 @@ RandomPlayer::RandomPlayer (char symbol, int dimension, int dimension2 = 0):Play
     }
     this->dimension2 = dimension2;
     this->name = "Random Computer Player";
-    cout << "My names is " << name << endl;
 }
 
 // Generate a random move
-void RandomPlayer::get_move (int& x, int& y) {
+void RandomPlayer::get_move (int& x, int& y, std::string code) {
     x = (int) (rand()/(RAND_MAX + 1.0) * dimension2);
     y = (int) (rand()/(RAND_MAX + 1.0) * dimension);
 }

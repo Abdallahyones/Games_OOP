@@ -1,14 +1,8 @@
-// Class definition for XO_Player class
-// Author:  Mohammad El-Ramly
-// Date:    10/10/2022
-// Version: 1
-#include<iostream>
-#include<random>
-#include<iomanip>
-#include<algorithm>
-#include"BoardGame_Classes.hpp"
-using namespace std;
-
+#include "player.h"
+#include "xogui.h"
+#include "pyramidgui.h"
+#include "largegui.h"
+#include "connectgui.h"
 // Give player a symbol to use in playing
 // It can be X or O or others
 // This is needed for computer players
@@ -20,25 +14,30 @@ Player::Player(char symbol) {
 // Optionally, you can give him ID or order
 // Like Player 1 and Player 2
 Player::Player (int order, char symbol) {
-    cout << "Welcome player " << order <<"\nPlease enter your name: \n";
-    cin >> name;
+    name = "Player " + std::to_string(order);
     this->symbol = symbol;
 }
 
-// Get desired move: x y (each between 0 and 2)
-// Virtual (can change for other player types)
-
-void Player::get_move (int& x, int& y) {
-    cout << "\nPlease enter your move x and y (0 to 2) separated by spaces: ";
-    cin >> x >> y;
+char Player::get_symbol(){
+    return this->symbol;
 }
 
-// Give player info as a string
-string Player::to_string(){
-    return "Player: " + name ;
+void Player::get_move (int& x, int& y, std::string code) {
+    std::pair<int,int> p;
+
+    if (code == "normal")
+        p = xoGui::getCord();
+    else if (code == "pyramid")
+        p = pyramidgui::getCord();
+    else if (code == "large")
+        p = largegui::getCord();
+    else
+        p = connectgui::getCord();
+
+    x = p.first;
+    y = p.second;
 }
 
-// Get symbol used by player
-char Player::get_symbol() {
-    return symbol;
+std::string Player::to_string(){
+    return this->name;
 }
