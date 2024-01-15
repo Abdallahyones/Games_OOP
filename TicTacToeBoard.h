@@ -10,8 +10,8 @@ public:
     void display_board();
     bool is_winner();
     bool is_draw();
-    bool game_is_over();
     int CalcPoints();
+    bool game_is_over();
 };
 
 
