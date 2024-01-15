@@ -66,14 +66,6 @@ int TicTacToeBoard::CalcPoints(){
             }
         }
     }
-    
-    //Set Last Char
-    for (int i = 0; i < n_rows; i++) {
-        for (int j = 0; j < n_cols; j++) {
-            if (board[i][j] == '#')
-                board[i][j] = 'O';
-        }
-    }
     if(o_points > x_points) return 2;
     else if(o_points < x_points) return 1;
     else return 0;
